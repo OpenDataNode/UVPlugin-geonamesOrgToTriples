@@ -16,7 +16,7 @@
 	<description>Geonames.org to N-Triples converter</description>
 
 	<properties>
-		<dpu.package>eu.unifiedviews.plugins.transformer.geonamesorgtontriples</dpu.package>
+		<dpu.package>eu.comsode.unifiedviews.plugins.transformer.geonamesorgtontriples</dpu.package>
 		<dpu.mainClass>GeonamesOrgToNTriples</dpu.mainClass>
 	</properties>
 

@@ -1,4 +1,4 @@
-package eu.unifiedviews.plugins.transformer.geonamesorgtontriples;
+package eu.comsode.unifiedviews.plugins.transformer.geonamesorgtontriples;
 
 import java.io.BufferedReader;
 import java.io.File;
