@@ -11,6 +11,7 @@ import java.net.URI;
 import org.openrdf.rio.RDFFormat;
 import org.openrdf.rio.RDFHandlerException;
 import org.openrdf.rio.RDFParseException;
+import org.openrdf.rio.RDFParser;
 import org.openrdf.rio.RDFWriter;
 import org.openrdf.rio.Rio;
 import org.slf4j.Logger;
@@ -62,8 +63,7 @@ public class GeonamesOrgToNTriples extends AbstractDpu<GeonamesOrgToNTriplesConf
                     sc = new BufferedReader(new FileReader(new File(URI.create(entry.getFileURIString()))));
                     String line;
                     long count = 0;
-                    RDFXMLParserSilent inputParser = new RDFXMLParserSilent();//Rio.createParser(RDFFormat.RDFXML);
-                    inputParser.initialize();
+                    RDFParser inputParser = new RDFXMLParserSilent();//Rio.createParser(RDFFormat.RDFXML);
                     while ((line = sc.readLine()) != null) {
                         if ((count % 2) != 0) {
 
@@ -72,7 +72,7 @@ public class GeonamesOrgToNTriples extends AbstractDpu<GeonamesOrgToNTriplesConf
                         }
                         count++;
                     }
-                } catch (SAXException | IOException | RDFParseException | RDFHandlerException ex) {
+                } catch (IOException | RDFParseException | RDFHandlerException ex) {
                     throw ContextUtils.dpuException(ctx, ex, "GeonamesOrgToNTriples.execute.exception");
                 } finally {
                     if (sc != null) {
