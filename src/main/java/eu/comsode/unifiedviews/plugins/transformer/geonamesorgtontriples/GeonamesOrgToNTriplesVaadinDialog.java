@@ -1,6 +1,5 @@
 package eu.comsode.unifiedviews.plugins.transformer.geonamesorgtontriples;
 
-import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
 import eu.unifiedviews.dpu.config.DPUConfigException;
@@ -29,6 +28,8 @@ public class GeonamesOrgToNTriplesVaadinDialog extends AbstractDialog<GeonamesOr
 
     @Override
     public void buildDialogLayout() {
+        VerticalLayout layout = new  VerticalLayout();
+        setCompositionRoot(layout);
     }
 
 }

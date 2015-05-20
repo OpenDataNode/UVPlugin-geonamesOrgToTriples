@@ -1,0 +1,71 @@
+<http://sws.geonames.org/1/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.geonames.org/ontology#Feature> .
+<http://sws.geonames.org/1/> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://sws.geonames.org/1/about.rdf> .
+<http://sws.geonames.org/1/> <http://www.geonames.org/ontology#name> "K\u016Bh-e Zardar"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://sws.geonames.org/1/> <http://www.geonames.org/ontology#alternateName> "K\u016Bh-e Zardar"@fa .
+<http://sws.geonames.org/1/> <http://www.geonames.org/ontology#featureClass> <http://www.geonames.org/ontology#T> .
+<http://sws.geonames.org/1/> <http://www.geonames.org/ontology#featureCode> <http://www.geonames.org/ontology#T.MT> .
+<http://sws.geonames.org/1/> <http://www.geonames.org/ontology#countryCode> "IR"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://sws.geonames.org/1/> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "32.98333"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://sws.geonames.org/1/> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "49.13333"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://sws.geonames.org/1/> <http://www.geonames.org/ontology#parentFeature> <http://sws.geonames.org/125605/> .
+<http://sws.geonames.org/1/> <http://www.geonames.org/ontology#parentCountry> <http://sws.geonames.org/130758/> .
+<http://sws.geonames.org/1/> <http://www.geonames.org/ontology#parentADM1> <http://sws.geonames.org/125605/> .
+<http://sws.geonames.org/1/> <http://www.geonames.org/ontology#nearbyFeatures> <http://sws.geonames.org/1/nearby.rdf> .
+<http://sws.geonames.org/1/> <http://www.geonames.org/ontology#locationMap> <http://www.geonames.org/1/kuh-e-zardar.html> .
+<http://sws.geonames.org/3/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.geonames.org/ontology#Feature> .
+<http://sws.geonames.org/3/> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://sws.geonames.org/3/about.rdf> .
+<http://sws.geonames.org/3/> <http://www.geonames.org/ontology#name> "Zam\u012Bn S\u016Bkhteh"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://sws.geonames.org/3/> <http://www.geonames.org/ontology#alternateName> "Zam\u012Bn S\u016Bkhteh"@fa .
+<http://sws.geonames.org/3/> <http://www.geonames.org/ontology#featureClass> <http://www.geonames.org/ontology#P> .
+<http://sws.geonames.org/3/> <http://www.geonames.org/ontology#featureCode> <http://www.geonames.org/ontology#P.PPL> .
+<http://sws.geonames.org/3/> <http://www.geonames.org/ontology#countryCode> "IR"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://sws.geonames.org/3/> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "32.48333"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://sws.geonames.org/3/> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "48.91667"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://sws.geonames.org/3/> <http://www.geonames.org/ontology#parentFeature> <http://sws.geonames.org/127082/> .
+<http://sws.geonames.org/3/> <http://www.geonames.org/ontology#parentCountry> <http://sws.geonames.org/130758/> .
+<http://sws.geonames.org/3/> <http://www.geonames.org/ontology#parentADM1> <http://sws.geonames.org/127082/> .
+<http://sws.geonames.org/3/> <http://www.geonames.org/ontology#nearbyFeatures> <http://sws.geonames.org/3/nearby.rdf> .
+<http://sws.geonames.org/3/> <http://www.geonames.org/ontology#locationMap> <http://www.geonames.org/3/zamin-sukhteh.html> .
+<http://sws.geonames.org/4/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.geonames.org/ontology#Feature> .
+<http://sws.geonames.org/4/> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://sws.geonames.org/4/about.rdf> .
+<http://sws.geonames.org/4/> <http://www.geonames.org/ontology#name> "R\u016Bdkh\u0101neh-ye Z\u0101kal\u012B"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://sws.geonames.org/4/> <http://www.geonames.org/ontology#alternateName> "\u0631\u0648\u062F\u062E\u0627\u0646\u0647 \u0632\u0627\u06A9\u0644\u06CC"@fa .
+<http://sws.geonames.org/4/> <http://www.geonames.org/ontology#alternateName> "R\u016Bdkh\u0101neh-ye Z\u0101kal\u012B"@fa .
+<http://sws.geonames.org/4/> <http://www.geonames.org/ontology#alternateName> "\u0100b-e Z\u0101lak\u012B"@fa .
+<http://sws.geonames.org/4/> <http://www.geonames.org/ontology#featureClass> <http://www.geonames.org/ontology#H> .
+<http://sws.geonames.org/4/> <http://www.geonames.org/ontology#featureCode> <http://www.geonames.org/ontology#H.STM> .
+<http://sws.geonames.org/4/> <http://www.geonames.org/ontology#countryCode> "IR"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://sws.geonames.org/4/> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "32.8455"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://sws.geonames.org/4/> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "49.3667"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://sws.geonames.org/4/> <http://www.geonames.org/ontology#parentFeature> <http://sws.geonames.org/125605/> .
+<http://sws.geonames.org/4/> <http://www.geonames.org/ontology#parentCountry> <http://sws.geonames.org/130758/> .
+<http://sws.geonames.org/4/> <http://www.geonames.org/ontology#parentADM1> <http://sws.geonames.org/125605/> .
+<http://sws.geonames.org/4/> <http://www.geonames.org/ontology#nearbyFeatures> <http://sws.geonames.org/4/nearby.rdf> .
+<http://sws.geonames.org/4/> <http://www.geonames.org/ontology#locationMap> <http://www.geonames.org/4/rudkhaneh-ye-zakali.html> .
+<http://sws.geonames.org/5/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.geonames.org/ontology#Feature> .
+<http://sws.geonames.org/5/> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://sws.geonames.org/5/about.rdf> .
+<http://sws.geonames.org/5/> <http://www.geonames.org/ontology#name> "Yek\u0101h\u012B"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://sws.geonames.org/5/> <http://www.geonames.org/ontology#alternateName> "Yek\u0101h\u012B"@fa .
+<http://sws.geonames.org/5/> <http://www.geonames.org/ontology#featureClass> <http://www.geonames.org/ontology#P> .
+<http://sws.geonames.org/5/> <http://www.geonames.org/ontology#featureCode> <http://www.geonames.org/ontology#P.PPL> .
+<http://sws.geonames.org/5/> <http://www.geonames.org/ontology#countryCode> "IR"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://sws.geonames.org/5/> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "32.5"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://sws.geonames.org/5/> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "48.9"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://sws.geonames.org/5/> <http://www.geonames.org/ontology#parentFeature> <http://sws.geonames.org/127082/> .
+<http://sws.geonames.org/5/> <http://www.geonames.org/ontology#parentCountry> <http://sws.geonames.org/130758/> .
+<http://sws.geonames.org/5/> <http://www.geonames.org/ontology#parentADM1> <http://sws.geonames.org/127082/> .
+<http://sws.geonames.org/5/> <http://www.geonames.org/ontology#nearbyFeatures> <http://sws.geonames.org/5/nearby.rdf> .
+<http://sws.geonames.org/5/> <http://www.geonames.org/ontology#locationMap> <http://www.geonames.org/5/yekahi.html> .
+<http://sws.geonames.org/6/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.geonames.org/ontology#Feature> .
+<http://sws.geonames.org/6/> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://sws.geonames.org/6/about.rdf> .
+<http://sws.geonames.org/6/> <http://www.geonames.org/ontology#name> "\u0100b-e Yas\u012B"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://sws.geonames.org/6/> <http://www.geonames.org/ontology#featureClass> <http://www.geonames.org/ontology#H> .
+<http://sws.geonames.org/6/> <http://www.geonames.org/ontology#featureCode> <http://www.geonames.org/ontology#H.STM> .
+<http://sws.geonames.org/6/> <http://www.geonames.org/ontology#countryCode> "IR"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://sws.geonames.org/6/> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> "32.8"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://sws.geonames.org/6/> <http://www.w3.org/2003/01/geo/wgs84_pos#long> "48.8"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://sws.geonames.org/6/> <http://www.geonames.org/ontology#parentFeature> <http://sws.geonames.org/127082/> .
+<http://sws.geonames.org/6/> <http://www.geonames.org/ontology#parentCountry> <http://sws.geonames.org/130758/> .
+<http://sws.geonames.org/6/> <http://www.geonames.org/ontology#parentADM1> <http://sws.geonames.org/127082/> .
+<http://sws.geonames.org/6/> <http://www.geonames.org/ontology#nearbyFeatures> <http://sws.geonames.org/6/nearby.rdf> .
+<http://sws.geonames.org/6/> <http://www.geonames.org/ontology#locationMap> <http://www.geonames.org/6/ab-e-yasi.html> .

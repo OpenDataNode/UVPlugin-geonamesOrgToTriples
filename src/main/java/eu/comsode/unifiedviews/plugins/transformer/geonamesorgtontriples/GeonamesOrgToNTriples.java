@@ -16,6 +16,7 @@ import org.openrdf.rio.RDFWriter;
 import org.openrdf.rio.Rio;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.xml.sax.SAXException;
 
 import eu.unifiedviews.dataunit.DataUnit;
 import eu.unifiedviews.dataunit.DataUnitException;
@@ -26,6 +27,7 @@ import eu.unifiedviews.dpu.DPUException;
 import eu.unifiedviews.helpers.dataunit.files.FilesHelper;
 import eu.unifiedviews.helpers.dataunit.virtualpath.VirtualPathHelpers;
 import eu.unifiedviews.helpers.dpu.config.ConfigHistory;
+import eu.unifiedviews.helpers.dpu.context.ContextUtils;
 import eu.unifiedviews.helpers.dpu.exec.AbstractDpu;
 
 /**
@@ -49,7 +51,7 @@ public class GeonamesOrgToNTriples extends AbstractDpu<GeonamesOrgToNTriplesConf
     @Override
     protected void innerExecute() throws DPUException {
         FileWriter outputFileWriter = null;
-        String outputSymbolicName ="t-geonames-output.nt";
+        String outputSymbolicName = "t-geonames-output.nt";
         try {
             File outputFile = new File(URI.create(filesOutput.addNewFile(outputSymbolicName)));
             VirtualPathHelpers.setVirtualPath(filesOutput, outputSymbolicName, outputSymbolicName);
@@ -61,16 +63,19 @@ public class GeonamesOrgToNTriples extends AbstractDpu<GeonamesOrgToNTriplesConf
                     sc = new BufferedReader(new FileReader(new File(URI.create(entry.getFileURIString()))));
                     String line;
                     long count = 0;
+                    RDFXMLParserSilent inputParser = new RDFXMLParserSilent();//Rio.createParser(RDFFormat.RDFXML);
+                    inputParser.initialize();
                     while ((line = sc.readLine()) != null) {
                         if ((count % 2) != 0) {
-                            RDFParser inputParser = Rio.createParser(RDFFormat.RDFXML);
+
                             inputParser.setRDFHandler(outputWriter);
                             inputParser.parse(new StringReader(line), outputFile.toURI().toString());
                         }
                         count++;
+                        LOG.warn("Count" + count);
                     }
-                } catch (IOException | RDFParseException | RDFHandlerException ex) {
-                    ex.printStackTrace();
+                } catch (SAXException | IOException | RDFParseException | RDFHandlerException ex) {
+                    throw ContextUtils.dpuException(ctx, ex, "GeonamesOrgToNTriples.execute.exception");
                 } finally {
                     if (sc != null) {
                         try {
@@ -81,9 +86,9 @@ public class GeonamesOrgToNTriples extends AbstractDpu<GeonamesOrgToNTriplesConf
                 }
             }
         } catch (IOException | DataUnitException ex) {
-            ex.printStackTrace();
+            throw ContextUtils.dpuException(ctx, ex, "GeonamesOrgToNTriples.execute.exception");
         } finally {
-            if (outputFileWriter!=null) {
+            if (outputFileWriter != null) {
                 try {
                     outputFileWriter.close();
                 } catch (IOException ex) {

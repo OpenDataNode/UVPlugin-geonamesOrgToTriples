@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>eu.unifiedviews</groupId>
@@ -18,6 +19,8 @@
 	<properties>
 		<dpu.package>eu.comsode.unifiedviews.plugins.transformer.geonamesorgtontriples</dpu.package>
 		<dpu.mainClass>GeonamesOrgToNTriples</dpu.mainClass>
+		<sesame.groupId>org.openrdf.sesame</sesame.groupId>
+		<sesame.version>2.8.1</sesame.version>
 	</properties>
 
 	<dependencies>
@@ -31,6 +34,54 @@
 			<groupId>eu.unifiedviews</groupId>
 			<artifactId>uv-dpu-helpers</artifactId>
 			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>${sesame.groupId}</groupId>
+			<artifactId>sesame-rio-rdfxml</artifactId>
+			<version>${sesame.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${sesame.groupId}</groupId>
+			<artifactId>sesame-model</artifactId>
+			<version>${sesame.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${sesame.groupId}</groupId>
+			<artifactId>sesame-rio-api</artifactId>
+			<version>${sesame.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${sesame.groupId}</groupId>
+			<artifactId>sesame-rio-datatypes</artifactId>
+			<version>${sesame.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>${sesame.groupId}</groupId>
+			<artifactId>sesame-rio-languages</artifactId>
+			<version>${sesame.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>${sesame.groupId}</groupId>
+			<artifactId>sesame-util</artifactId>
+			<version>${sesame.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+		</dependency>
+		<!-- UNIT Test dependencies. -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- Core UnifiedViews testing support. -->
+		<dependency>
+			<groupId>eu.unifiedviews</groupId>
+			<artifactId>module-test</artifactId>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
