@@ -15,7 +15,6 @@ import org.openrdf.rio.ParseLocationListener;
 import org.openrdf.rio.RDFHandlerException;
 import org.openrdf.rio.RDFParseException;
 import org.openrdf.rio.helpers.XMLParserSettings;
-import org.openrdf.rio.rdfxml.RDFXMLParser;
 import org.xml.sax.Attributes;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.Locator;

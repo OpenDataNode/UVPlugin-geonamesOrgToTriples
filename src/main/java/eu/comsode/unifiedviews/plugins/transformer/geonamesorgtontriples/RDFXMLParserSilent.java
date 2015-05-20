@@ -26,12 +26,13 @@ import org.openrdf.model.Value;
 import org.openrdf.model.ValueFactory;
 import org.openrdf.model.impl.ValueFactoryImpl;
 import org.openrdf.model.vocabulary.RDF;
+import org.openrdf.rio.RDFFormat;
 import org.openrdf.rio.RDFHandlerException;
 import org.openrdf.rio.RDFParseException;
 import org.openrdf.rio.RioSetting;
 import org.openrdf.rio.helpers.RDFParserBase;
 import org.openrdf.rio.helpers.XMLParserSettings;
-import org.openrdf.rio.rdfxml.RDFXMLParser;
+import org.xml.sax.ErrorHandler;
 import org.xml.sax.InputSource;
 import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
@@ -40,7 +41,7 @@ import org.xml.sax.SAXNotSupportedException;
 import org.xml.sax.SAXParseException;
 import org.xml.sax.XMLReader;
 
-public class RDFXMLParserSilent extends RDFXMLParser {
+public class RDFXMLParserSilent extends RDFParserBase implements ErrorHandler {
 
     /*-----------*
      * Variables *
@@ -1355,5 +1356,10 @@ public class RDFXMLParserSilent extends RDFXMLParser {
         } catch (RDFParseException rdfpe) {
             throw new SAXException(rdfpe);
         }
+    }
+
+    @Override
+    public RDFFormat getRDFFormat() {
+        return RDFFormat.RDFXML;
     }
 }
