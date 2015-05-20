@@ -35,7 +35,8 @@ public class GeonamesOrgToNTriplesTest {
                 .getResourceAsStream("example-geonames-rdf.txt");
         InputStream outputFileIS = Thread.currentThread().getContextClassLoader()
                 .getResourceAsStream("example-geonames-rdf-output.ttl");
-        byte[] outputFileArray = IOUtils.toByteArray(outputFileIS);
+        String outputFileArray = IOUtils.toString(outputFileIS);
+        
         
         File tempFile = File.createTempFile("____", "fdsa");
         FileUtils.copyInputStreamToFile(inputFileIS, tempFile);
@@ -50,8 +51,8 @@ public class GeonamesOrgToNTriplesTest {
 
             // Iterate over files.
             for (FilesDataUnit.Entry entry : outputEntries) {
-                byte[] outputContent = FileUtils.readFileToByteArray(new File(new URI(entry.getFileURIString())));
-                Assert.assertArrayEquals(outputFileArray, outputContent);
+                String outputContent = FileUtils.readFileToString(new File(new URI(entry.getFileURIString())));
+                Assert.assertEquals(outputFileArray, outputContent);
             }
         } finally {
             // Release resources.
