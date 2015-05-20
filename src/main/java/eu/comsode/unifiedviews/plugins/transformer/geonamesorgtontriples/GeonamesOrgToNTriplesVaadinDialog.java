@@ -28,8 +28,6 @@ public class GeonamesOrgToNTriplesVaadinDialog extends AbstractDialog<GeonamesOr
 
     @Override
     public void buildDialogLayout() {
-        VerticalLayout layout = new  VerticalLayout();
-        setCompositionRoot(layout);
     }
 
 }
