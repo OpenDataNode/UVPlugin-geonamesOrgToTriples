@@ -64,13 +64,17 @@ public class GeonamesOrgToNTriples extends AbstractDpu<GeonamesOrgToNTriplesConf
                     String line;
                     long count = 0;
                     RDFParser inputParser = new RDFXMLParserSilent();//Rio.createParser(RDFFormat.RDFXML);
+                    boolean lineEven = false;
                     while ((line = sc.readLine()) != null) {
-                        if ((count % 2) != 0) {
-
+                        if (lineEven) {
                             inputParser.setRDFHandler(outputWriter);
                             inputParser.parse(new StringReader(line), outputFile.toURI().toString());
+                            count++;
                         }
-                        count++;
+                        lineEven = !lineEven;
+                        if ((count % 1000) == 0) {
+                            LOG.info("Processed " + count + " files ");
+                        }
                     }
                 } catch (IOException | RDFParseException | RDFHandlerException ex) {
                     throw ContextUtils.dpuException(ctx, ex, "GeonamesOrgToNTriples.execute.exception");

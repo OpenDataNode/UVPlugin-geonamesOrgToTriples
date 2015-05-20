@@ -1,7 +1,5 @@
 package eu.comsode.unifiedviews.plugins.transformer.geonamesorgtontriples;
 
-import com.vaadin.ui.VerticalLayout;
-
 import eu.unifiedviews.dpu.config.DPUConfigException;
 import eu.unifiedviews.helpers.dpu.vaadin.dialog.AbstractDialog;
 
