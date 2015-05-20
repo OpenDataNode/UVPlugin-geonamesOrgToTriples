@@ -77,7 +77,7 @@ public class RDFXMLParserSilent extends RDFParserBase implements ErrorHandler {
      */
     private Set<URI> usedIDs = new HashSet<URI>();
 
-    protected XMLReader xmlReader;
+    protected XMLReader xmlReader = null;
 
     /*--------------*
      * Constructors *
@@ -94,7 +94,7 @@ public class RDFXMLParserSilent extends RDFParserBase implements ErrorHandler {
         saxFilter = new SAXFilter(this);
     }
 
-    public void initialize() throws SAXException {
+    protected void initialize() throws SAXException {
         if (getParserConfig().isSet(XMLParserSettings.CUSTOM_XML_READER)) {
             xmlReader = getParserConfig().get(XMLParserSettings.CUSTOM_XML_READER);
         }
@@ -268,6 +268,10 @@ public class RDFXMLParserSilent extends RDFParserBase implements ErrorHandler {
             throws IOException, RDFParseException, RDFHandlerException
     {
         try {
+            if (xmlReader == null) {
+                initialize();
+            }
+            
             documentURI = inputSource.getSystemId();
 
             saxFilter.setParseStandAloneDocuments(getParserConfig().get(
