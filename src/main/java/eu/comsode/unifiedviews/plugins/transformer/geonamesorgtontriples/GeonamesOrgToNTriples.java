@@ -57,12 +57,12 @@ public class GeonamesOrgToNTriples extends AbstractDpu<GeonamesOrgToNTriplesConf
             VirtualPathHelpers.setVirtualPath(filesOutput, outputSymbolicName, outputSymbolicName);
             outputFileWriter = new FileWriter(outputFile);
             RDFWriter outputWriter = Rio.createWriter(RDFFormat.NTRIPLES, outputFileWriter);
+            long count = 0;
             for (FilesDataUnit.Entry entry : FilesHelper.getFiles(filesInput)) {
                 BufferedReader sc = null;
                 try {
                     sc = new BufferedReader(new FileReader(new File(URI.create(entry.getFileURIString()))));
                     String line;
-                    long count = 0;
                     RDFParser inputParser = new RDFXMLParserSilent();//Rio.createParser(RDFFormat.RDFXML);
                     boolean lineEven = false;
                     while ((line = sc.readLine()) != null) {
@@ -87,6 +87,7 @@ public class GeonamesOrgToNTriples extends AbstractDpu<GeonamesOrgToNTriplesConf
                     }
                 }
             }
+            LOG.info("Processed " + count + " files ");
         } catch (IOException | DataUnitException ex) {
             throw ContextUtils.dpuException(ctx, ex, "GeonamesOrgToNTriples.execute.exception");
         } finally {
