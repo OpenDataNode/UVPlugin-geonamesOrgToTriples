@@ -51,12 +51,12 @@ public class GeonamesOrgToNTriples extends AbstractDpu<GeonamesOrgToNTriplesConf
     @Override
     protected void innerExecute() throws DPUException {
         FileWriter outputFileWriter = null;
-        String outputSymbolicName = "t-geonames-output.nt";
+        String outputSymbolicName = "t-geonames-output.ttl";
         try {
             File outputFile = new File(URI.create(filesOutput.addNewFile(outputSymbolicName)));
             VirtualPathHelpers.setVirtualPath(filesOutput, outputSymbolicName, outputSymbolicName);
             outputFileWriter = new FileWriter(outputFile);
-            RDFWriter outputWriter = Rio.createWriter(RDFFormat.NTRIPLES, outputFileWriter);
+            RDFWriter outputWriter = Rio.createWriter(RDFFormat.TURTLE, outputFileWriter);
             long count = 0;
             for (FilesDataUnit.Entry entry : FilesHelper.getFiles(filesInput)) {
                 BufferedReader sc = null;
