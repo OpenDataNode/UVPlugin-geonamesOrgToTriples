@@ -2,9 +2,10 @@ package eu.comsode.unifiedviews.plugins.transformer.geonamesorgtontriples;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.io.StringReader;
 import java.net.URI;
 
@@ -16,7 +17,6 @@ import org.openrdf.rio.RDFWriter;
 import org.openrdf.rio.Rio;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.xml.sax.SAXException;
 
 import eu.unifiedviews.dataunit.DataUnit;
 import eu.unifiedviews.dataunit.DataUnitException;
@@ -50,12 +50,12 @@ public class GeonamesOrgToNTriples extends AbstractDpu<GeonamesOrgToNTriplesConf
 
     @Override
     protected void innerExecute() throws DPUException {
-        FileWriter outputFileWriter = null;
+        OutputStreamWriter outputFileWriter = null;
         String outputSymbolicName = "t-geonames-output.ttl";
         try {
             File outputFile = new File(URI.create(filesOutput.addNewFile(outputSymbolicName)));
             VirtualPathHelpers.setVirtualPath(filesOutput, outputSymbolicName, outputSymbolicName);
-            outputFileWriter = new FileWriter(outputFile);
+            outputFileWriter = new OutputStreamWriter(new FileOutputStream(outputFile), "UTF-8");
             RDFWriter outputWriter = Rio.createWriter(RDFFormat.TURTLE, outputFileWriter);
             long count = 0;
             for (FilesDataUnit.Entry entry : FilesHelper.getFiles(filesInput)) {
