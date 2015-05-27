@@ -52,6 +52,7 @@ public class GeonamesOrgToNTriplesTest {
             // Iterate over files.
             for (FilesDataUnit.Entry entry : outputEntries) {
                 String outputContent = FileUtils.readFileToString(new File(new URI(entry.getFileURIString())));
+                System.out.print(outputContent);
                 Assert.assertEquals(outputFileArray, outputContent);
             }
         } finally {
