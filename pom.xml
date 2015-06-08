@@ -10,15 +10,15 @@
 	</parent>
 
 	<groupId>eu.comsode.plugins</groupId>
-	<artifactId>uv-t-geonamesOrgToNTriples</artifactId>
+	<artifactId>uv-t-geonamesOrgToRdfFile</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>bundle</packaging>
-	<name>T-GeonamesOrgToNTriples</name>
-	<description>Geonames.org to N-Triples converter</description>
+	<name>T-GeonamesOrgToRdfFile</name>
+	<description>Geonames.org to Rdf File converter</description>
 
 	<properties>
-		<dpu.package>eu.comsode.unifiedviews.plugins.transformer.geonamesorgtontriples</dpu.package>
-		<dpu.mainClass>GeonamesOrgToNTriples</dpu.mainClass>
+		<dpu.package>eu.comsode.unifiedviews.plugins.transformer.geonamesorgtordffile</dpu.package>
+		<dpu.mainClass>GeonamesOrgToRdfFile</dpu.mainClass>
 		<sesame.groupId>org.openrdf.sesame</sesame.groupId>
 	</properties>
 

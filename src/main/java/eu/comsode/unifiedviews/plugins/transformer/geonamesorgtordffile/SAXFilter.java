@@ -1,4 +1,4 @@
-package eu.comsode.unifiedviews.plugins.transformer.geonamesorgtontriples;
+package eu.comsode.unifiedviews.plugins.transformer.geonamesorgtordffile;
 
 import info.aduna.net.ParsedURI;
 import info.aduna.xml.XMLUtil;
