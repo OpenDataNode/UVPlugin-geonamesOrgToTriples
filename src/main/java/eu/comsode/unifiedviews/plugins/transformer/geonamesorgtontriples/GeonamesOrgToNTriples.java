@@ -2,9 +2,10 @@ package eu.comsode.unifiedviews.plugins.transformer.geonamesorgtontriples;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.StringReader;
 import java.net.URI;
@@ -61,7 +62,7 @@ public class GeonamesOrgToNTriples extends AbstractDpu<GeonamesOrgToNTriplesConf
             for (FilesDataUnit.Entry entry : FilesHelper.getFiles(filesInput)) {
                 BufferedReader sc = null;
                 try {
-                    sc = new BufferedReader(new FileReader(new File(URI.create(entry.getFileURIString()))));
+                    sc = new BufferedReader(new InputStreamReader(new FileInputStream(new File(URI.create(entry.getFileURIString()))), "UTF-8"));
                     String line;
                     RDFParser inputParser = new RDFXMLParserSilent();//Rio.createParser(RDFFormat.RDFXML);
                     boolean lineEven = false;
