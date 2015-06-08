@@ -1,0 +1,118 @@
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+
+<http://sws.geonames.org/1/> a gn:Feature ;
+	rdfs:isDefinedBy <http://sws.geonames.org/1/about.rdf> ;
+	gn:name "Kūh-e Zardar" ;
+	gn:alternateName "Kūh-e Zardar"@fa ;
+	gn:featureClass gn:T ;
+	gn:featureCode gn:T.MT ;
+	gn:countryCode "IR" ;
+	wgs84_pos:lat "32.98333" ;
+	wgs84_pos:long "49.13333" ;
+	gn:parentFeature <http://sws.geonames.org/125605/> ;
+	gn:parentCountry <http://sws.geonames.org/130758/> ;
+	gn:parentADM1 <http://sws.geonames.org/125605/> ;
+	gn:nearbyFeatures <http://sws.geonames.org/1/nearby.rdf> ;
+	gn:locationMap <http://www.geonames.org/1/kuh-e-zardar.html> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+
+
+<http://sws.geonames.org/3/> a gn:Feature ;
+	rdfs:isDefinedBy <http://sws.geonames.org/3/about.rdf> ;
+	gn:name "Zamīn Sūkhteh" ;
+	gn:alternateName "Zamīn Sūkhteh"@fa ;
+	gn:featureClass gn:P ;
+	gn:featureCode gn:P.PPL ;
+	gn:countryCode "IR" ;
+	wgs84_pos:lat "32.48333" ;
+	wgs84_pos:long "48.91667" ;
+	gn:parentFeature <http://sws.geonames.org/127082/> ;
+	gn:parentCountry <http://sws.geonames.org/130758/> ;
+	gn:parentADM1 <http://sws.geonames.org/127082/> ;
+	gn:nearbyFeatures <http://sws.geonames.org/3/nearby.rdf> ;
+	gn:locationMap <http://www.geonames.org/3/zamin-sukhteh.html> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+
+
+<http://sws.geonames.org/4/> a gn:Feature ;
+	rdfs:isDefinedBy <http://sws.geonames.org/4/about.rdf> ;
+	gn:name "Rūdkhāneh-ye Zākalī" ;
+	gn:alternateName "رودخانه زاکلی"@fa , "Rūdkhāneh-ye Zākalī"@fa , "Āb-e Zālakī"@fa ;
+	gn:featureClass gn:H ;
+	gn:featureCode gn:H.STM ;
+	gn:countryCode "IR" ;
+	wgs84_pos:lat "32.8455" ;
+	wgs84_pos:long "49.3667" ;
+	gn:parentFeature <http://sws.geonames.org/125605/> ;
+	gn:parentCountry <http://sws.geonames.org/130758/> ;
+	gn:parentADM1 <http://sws.geonames.org/125605/> ;
+	gn:nearbyFeatures <http://sws.geonames.org/4/nearby.rdf> ;
+	gn:locationMap <http://www.geonames.org/4/rudkhaneh-ye-zakali.html> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+
+
+<http://sws.geonames.org/5/> a gn:Feature ;
+	rdfs:isDefinedBy <http://sws.geonames.org/5/about.rdf> ;
+	gn:name "Yekāhī" ;
+	gn:alternateName "Yekāhī"@fa ;
+	gn:featureClass gn:P ;
+	gn:featureCode gn:P.PPL ;
+	gn:countryCode "IR" ;
+	wgs84_pos:lat "32.5" ;
+	wgs84_pos:long "48.9" ;
+	gn:parentFeature <http://sws.geonames.org/127082/> ;
+	gn:parentCountry <http://sws.geonames.org/130758/> ;
+	gn:parentADM1 <http://sws.geonames.org/127082/> ;
+	gn:nearbyFeatures <http://sws.geonames.org/5/nearby.rdf> ;
+	gn:locationMap <http://www.geonames.org/5/yekahi.html> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wgs84_pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+
+
+<http://sws.geonames.org/6/> a gn:Feature ;
+	rdfs:isDefinedBy <http://sws.geonames.org/6/about.rdf> ;
+	gn:name "Āb-e Yasī" ;
+	gn:featureClass gn:H ;
+	gn:featureCode gn:H.STM ;
+	gn:countryCode "IR" ;
+	wgs84_pos:lat "32.8" ;
+	wgs84_pos:long "48.8" ;
+	gn:parentFeature <http://sws.geonames.org/127082/> ;
+	gn:parentCountry <http://sws.geonames.org/130758/> ;
+	gn:parentADM1 <http://sws.geonames.org/127082/> ;
+	gn:nearbyFeatures <http://sws.geonames.org/6/nearby.rdf> ;
+	gn:locationMap <http://www.geonames.org/6/ab-e-yasi.html> .
