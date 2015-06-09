@@ -57,14 +57,19 @@ public class GeonamesOrgToRdfFile extends AbstractDpu<GeonamesOrgToRdfFileConfig
             File outputFile = new File(URI.create(filesOutput.addNewFile(outputSymbolicName)));
             VirtualPathHelpers.setVirtualPath(filesOutput, outputSymbolicName, outputSymbolicName);
             outputFileWriter = new OutputStreamWriter(new FileOutputStream(outputFile), "UTF-8");
-            RDFWriter outputWriter = Rio.createWriter(RDFFormat.TURTLE, outputFileWriter);
+            RDFWriter outputWriter = null;
+            if (config.getSerializationType() != null && config.getSerializationType().length() > 0) {
+                outputWriter = Rio.createWriter(RDFFormat.valueOf(config.getSerializationType()), outputFileWriter);
+            } else {
+                throw ContextUtils.dpuException(ctx, "GeonamesOrgToRdfFile.config.exception");
+            }
             long count = 0;
             for (FilesDataUnit.Entry entry : FilesHelper.getFiles(filesInput)) {
                 BufferedReader sc = null;
                 try {
                     sc = new BufferedReader(new InputStreamReader(new FileInputStream(new File(URI.create(entry.getFileURIString()))), "UTF-8"));
                     String line;
-                    RDFParser inputParser = new RDFXMLParserSilent();//Rio.createParser(RDFFormat.RDFXML);
+                    RDFParser inputParser = new RDFXMLParserSilent();
                     boolean lineEven = false;
                     while ((line = sc.readLine()) != null) {
                         if (lineEven) {
