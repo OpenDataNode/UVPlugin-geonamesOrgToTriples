@@ -13,6 +13,8 @@ import eu.unifiedviews.helpers.dpu.vaadin.dialog.AbstractDialog;
  */
 public class GeonamesOrgToRdfFileVaadinDialog extends AbstractDialog<GeonamesOrgToRdfFileConfig_V1> {
 
+    private RDFFormat rdfTypes[] = { RDFFormat.TURTLE, RDFFormat.NTRIPLES };
+
     private NativeSelect serializationTypeSelect;
 
     public GeonamesOrgToRdfFileVaadinDialog() {
@@ -41,7 +43,7 @@ public class GeonamesOrgToRdfFileVaadinDialog extends AbstractDialog<GeonamesOrg
         setHeight("100%");
 
         serializationTypeSelect = new NativeSelect(ctx.tr("combo.serializationType"));
-        for (RDFFormat item : RDFFormat.values()) {
+        for (RDFFormat item : rdfTypes) {
             serializationTypeSelect.addItem(item);
             serializationTypeSelect.setItemCaption(item, item.getName());
         }
