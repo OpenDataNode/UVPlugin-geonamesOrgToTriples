@@ -1,17 +1,17 @@
-# T-GeonamesOrgToNTriples #
+# T-GeonamesOrgToRdfFile #
 ----------
 
 ###General###
 
 |                              |                                                                             |
 |------------------------------|-----------------------------------------------------------------------------|
-|**Name:**                     |T-GeonamesOrgToNTriples                                                               |
-|**Description:**              |Geonames.org to N-Triples converter. |
+|**Name:**                     |T-GeonamesOrgToRdfFile                                                               |
+|**Description:**              |Geonames.org to Rdf File converter. |
 |**Status:**                   |Supported in Plugins v2.X. Updated to use Plugin-DevEnv v2.X.       |
 |                              |                                                                             |
-|**DPU class name:**           |GeonamesOrgToNTriples                                                                | 
-|**Configuration class name:** |GeonamesOrgToNTriplesConfig_V1                             |
-|**Dialogue class name:**      |GeonamesOrgToNTriplesVaadinDialog                      |
+|**DPU class name:**           |GeonamesOrgToRdfFile                                                                | 
+|**Configuration class name:** |GeonamesOrgToRdfFileConfig_V1                             |
+|**Dialogue class name:**      |GeonamesOrgToRdfFileVaadinDialog                      |
 
 ***
 

@@ -1,4 +1,4 @@
-package eu.comsode.unifiedviews.plugins.transformer.geonamesorgtontriples;
+package eu.comsode.unifiedviews.plugins.transformer.geonamesorgtordffile;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -35,9 +35,9 @@ import eu.unifiedviews.helpers.dpu.exec.AbstractDpu;
  * Main data processing unit class.
  */
 @DPU.AsTransformer
-public class GeonamesOrgToNTriples extends AbstractDpu<GeonamesOrgToNTriplesConfig_V1> {
+public class GeonamesOrgToRdfFile extends AbstractDpu<GeonamesOrgToRdfFileConfig_V1> {
 
-    private static final Logger LOG = LoggerFactory.getLogger(GeonamesOrgToNTriples.class);
+    private static final Logger LOG = LoggerFactory.getLogger(GeonamesOrgToRdfFile.class);
 
     @DataUnit.AsInput(name = "filesInput")
     public FilesDataUnit filesInput;
@@ -45,8 +45,8 @@ public class GeonamesOrgToNTriples extends AbstractDpu<GeonamesOrgToNTriplesConf
     @DataUnit.AsOutput(name = "filesOutput")
     public WritableFilesDataUnit filesOutput;
 
-    public GeonamesOrgToNTriples() {
-        super(GeonamesOrgToNTriplesVaadinDialog.class, ConfigHistory.noHistory(GeonamesOrgToNTriplesConfig_V1.class));
+    public GeonamesOrgToRdfFile() {
+        super(GeonamesOrgToRdfFileVaadinDialog.class, ConfigHistory.noHistory(GeonamesOrgToRdfFileConfig_V1.class));
     }
 
     @Override
@@ -57,14 +57,19 @@ public class GeonamesOrgToNTriples extends AbstractDpu<GeonamesOrgToNTriplesConf
             File outputFile = new File(URI.create(filesOutput.addNewFile(outputSymbolicName)));
             VirtualPathHelpers.setVirtualPath(filesOutput, outputSymbolicName, outputSymbolicName);
             outputFileWriter = new OutputStreamWriter(new FileOutputStream(outputFile), "UTF-8");
-            RDFWriter outputWriter = Rio.createWriter(RDFFormat.TURTLE, outputFileWriter);
+            RDFWriter outputWriter = null;
+            if (config.getSerializationType() != null && config.getSerializationType().length() > 0) {
+                outputWriter = Rio.createWriter(RDFFormat.valueOf(config.getSerializationType()), outputFileWriter);
+            } else {
+                throw ContextUtils.dpuException(ctx, "GeonamesOrgToRdfFile.config.exception");
+            }
             long count = 0;
             for (FilesDataUnit.Entry entry : FilesHelper.getFiles(filesInput)) {
                 BufferedReader sc = null;
                 try {
                     sc = new BufferedReader(new InputStreamReader(new FileInputStream(new File(URI.create(entry.getFileURIString()))), "UTF-8"));
                     String line;
-                    RDFParser inputParser = new RDFXMLParserSilent();//Rio.createParser(RDFFormat.RDFXML);
+                    RDFParser inputParser = new RDFXMLParserSilent();
                     boolean lineEven = false;
                     while ((line = sc.readLine()) != null) {
                         if (lineEven) {
@@ -78,7 +83,7 @@ public class GeonamesOrgToNTriples extends AbstractDpu<GeonamesOrgToNTriplesConf
                         }
                     }
                 } catch (IOException | RDFParseException | RDFHandlerException ex) {
-                    throw ContextUtils.dpuException(ctx, ex, "GeonamesOrgToNTriples.execute.exception");
+                    throw ContextUtils.dpuException(ctx, ex, "GeonamesOrgToRdfFile.execute.exception");
                 } finally {
                     if (sc != null) {
                         try {
@@ -90,7 +95,7 @@ public class GeonamesOrgToNTriples extends AbstractDpu<GeonamesOrgToNTriplesConf
             }
             LOG.info("Processed " + count + " files ");
         } catch (IOException | DataUnitException ex) {
-            throw ContextUtils.dpuException(ctx, ex, "GeonamesOrgToNTriples.execute.exception");
+            throw ContextUtils.dpuException(ctx, ex, "GeonamesOrgToRdfFile.execute.exception");
         } finally {
             if (outputFileWriter != null) {
                 try {
