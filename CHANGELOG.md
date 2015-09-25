@@ -1,6 +1,6 @@
 T-GeonamesOrgToRdfFile
 ----------
 
-v1.0.0-SNAPSHOT
+v1.0.0
 ---
 * initial release
